@@ -43,7 +43,9 @@ class Net(nn.Module):
         # Perhaps the gaussian activation has a slope too close to zero at points far from the training data?
         # Initially I considered using a finite-width dirac-delta function with a very small width as a possible activation function
         # but in that case the gradient is zero everywhere except at the points where it's discontinuous.
-        # I have a feeling that there might be a way to leverage something from distribution theory stuff to make this work.
+        # A gaussian with sufficiently small standard deviation could be a good enough approximation?
+        
+        # Can you think of a way to leverage an idea from distribution theory stuff to make this work?
         
         # EXPECTED RESULT : The final plot we would like to see is one where the red line is mostly flat with a few sharp spikes at the
         # training data points where the y-values are non-zero.
